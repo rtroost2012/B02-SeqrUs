@@ -1,0 +1,95 @@
+﻿@model Seqrus.Web.Helpers.ComplianceSettings
+@{
+    ViewData["Title"] = "Risks";
+}
+
+<div class="row">
+    <div class="col-md-9" role="main">
+        <h1 class="page-header">Risks</h1>
+        <section class="seq-section">
+            <p>Here are some of the OWASP risks that have been addressed in this web application.</p>
+            <p>Legend:</p>
+            <dl class="dl-horizontal">
+                <dt><risk-exposure /></dt>
+                <dd>Means that this risk has not been intentionally addressed in this application.</dd>
+
+                <dt><risk-exposure is-exposed="true" /></dt>
+                <dd>Means that this risk has been addressed in this application, in a way that makes the application intentionally susceptible to the risk.</dd>
+
+                <dt><risk-exposure is-exposed="false" /></dt>
+                <dd>Means that this risk has been addressed in this application, in a way that demonstrably addresses some or all aspects of the risk.</dd>
+            </dl>
+        </section>
+
+        <section id="a1" class="seq-section">
+            @await Html.PartialAsync("_A1_2017_Injection")
+        </section>
+
+        <section id="a2" class="seq-section">
+            @await Html.PartialAsync("_A2_2017_BrokenAuthentication")
+        </section>
+
+        <section id="a3" class="seq-section">
+            @await Html.PartialAsync("_A3_2017_SensitiveDataExposure")
+        </section>
+
+        <section id="a4" class="seq-section">
+            @await Html.PartialAsync("_A4_2017_XmlExternalEntity")
+        </section>
+
+        <section id="a5" class="seq-section">
+            @await Html.PartialAsync("_A5_2017_BrokenAccessControl")
+        </section>
+
+        <section id="a6" class="seq-section">
+            @await Html.PartialAsync("_A6_2017_SecurityMisconfiguration")
+        </section>
+
+        <section id="a7" class="seq-section">
+            @await Html.PartialAsync("_A7_2017_CrossSiteScripting")
+        </section>
+
+        <section id="a8" class="seq-section">
+            @await Html.PartialAsync("_A8_2017_InsecureDeserialization")
+        </section>
+
+        <section id="a9" class="seq-section">
+            @await Html.PartialAsync("_A9_2017_UsingComponentsWithKnown")
+        </section>
+
+        <section id="a10" class="seq-section">
+            @await Html.PartialAsync("_A10_2017_InsufficientLogging")
+        </section>
+
+        <section id="a8-2013" class="seq-section">
+            @await Html.PartialAsync("_A8_2013_CrossSiteRequestForgery")
+        </section>
+    </div>
+    <div class="col-md-3" role="complementary">
+        <nav class="hidden-sm hidden-xs seq-sidebar" id="seq-risks-sidebar" data-spy="affix">
+            <ul class="nav">
+                <li>
+                    <a href="#risks">Risks</a>
+                    <ul class="nav">
+                        <li><a href="#a1">A1 - Injection</a></li>
+                        <li><a href="#a2">A2 - Broken Authentication and Session Management</a></li>
+                        <li><a href="#a3">A3 - Sensitive Data Exposure </a></li>
+                        <li><a href="#a4">A4 - XML External Entity (XXE)</a></li>
+                        <li><a href="#a5">A5 - Broken Access Control</a></li>
+                        <li><a href="#a6">A6 - Security Misconfiguration</a></li>
+                        <li><a href="#a7">A7 - Cross-Site Scripting (XSS)</a></li>
+                        <li><a href="#a8">A8 - Insecure Deserialization</a></li>
+                        <li><a href="#a9">A9 - Using Components With Known Vulnerabilities</a></li>
+                        <li><a href="#a10">A10 - Insufficient Logging and Monitoring</a></li>
+                        <li><a href="#a8-2013">A8 2013 - Cross-Site Request Forgery (CSRF)</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+@section scripts
+    {
+    <script type="text/javascript" src="~/js/risk.js"></script>
+}
